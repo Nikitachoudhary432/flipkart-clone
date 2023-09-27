@@ -47,36 +47,38 @@ const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart);
 
-
   const removeItemFromCart = (id) => {
     dispatch(removeFromCart(id));
   };
 
   return (
     <div>
-      <Component container>
-        <LeftComponent item lg={9} md={9} sm={12} xs={12}>
-          <Header>
-            <Typography style={{ fontWeight: 600, fontSize: 18 }}>
-              My Cart
-            </Typography>
-          </Header>
-          {cartItems.map((item) => (
-            <CartItem
-              key={item.id}
-              item={item}
-              removeItemFromCart={removeItemFromCart}
-            />
-          ))}
-          <BottomWrapper>
-            <StyledButton>Place Order</StyledButton>
-          </BottomWrapper>
-        </LeftComponent>
-        <Grid item lg={3} md={3} sm={12} xs={12}>
-          <TotalView cartItems={cartItems} />
-        </Grid>
-      </Component>{" "}
-      : <EmptyCart />
+      {cartItems.length ? (
+        <Component container>
+          <LeftComponent item lg={9} md={9} sm={12} xs={12}>
+            <Header>
+              <Typography style={{ fontWeight: 600, fontSize: 18 }}>
+                My Cart
+              </Typography>
+            </Header>
+            {cartItems.map((item) => (
+              <CartItem
+                key={item.id}
+                item={item}
+                removeItemFromCart={removeItemFromCart}
+              />
+            ))}
+            <BottomWrapper>
+              <StyledButton>Place Order</StyledButton>
+            </BottomWrapper>
+          </LeftComponent>
+          <Grid item lg={3} md={3} sm={12} xs={12}>
+            <TotalView cartItems={cartItems} />
+          </Grid>
+        </Component>
+      ) : (
+        <EmptyCart />
+      )}
     </div>
   );
 };
