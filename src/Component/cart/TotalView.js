@@ -80,7 +80,7 @@ const TotalView = ({ cartItems }) => {
                 <TotalAmount>Total Amount
                     <Price>₹{price - discount + 40}</Price>
                 </TotalAmount>
-                <Discount>You will save ₹{discount - 40} on this order</Discount>
+                {/* <Discount>You will save ₹{discount - 40} on this order</Discount> */}
             </Container>
         </Box>
     )

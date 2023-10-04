@@ -4,7 +4,7 @@ const Component = styled(Box)`
   width: 80%;
   height: 65vh;
   background: #fff;
-  margin: 80px 140px;
+  margin: 30px 140px;
 `;
 
 const Container = styled(Box)`

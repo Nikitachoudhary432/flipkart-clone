@@ -1,6 +1,6 @@
-import { Typography, Box, styled } from "@mui/material";
-
+import { Typography, Box, styled, Menu, MenuItem } from "@mui/material";
 import { navData } from "../../constant/data";
+import { useState } from "react";
 
 const Component = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -24,12 +24,45 @@ const Text = styled(Typography)`
 `;
 
 const NavBar = () => {
+  const [menu, setMenu] = useState(null);
+
+  const handleMenu = (event) => {
+    setMenu(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setMenu(null);
+  };
+
   return (
     <Component>
-      {navData.map((temp) => (
-        <Container>
-          <img src={temp.url} style={{ width: 64 }} />
-          <Text>{temp.text}</Text>
+      {navData.map((temp, index) => (
+        <Container key={index}>
+          <img src={temp.url} style={{ width: 64, height: 64 }} />
+          <Text
+            onMouseEnter={(e) => {
+              if (index === 2) {
+                setMenu(e.currentTarget);
+              } else {
+                handleClose();
+              }
+            }}
+          >
+            {temp.text}
+          </Text>
+          {index === 2 && (
+            <Menu
+              anchorEl={menu}
+              open={Boolean(menu)}
+              onMouseLeave={handleClose}
+            >
+              <MenuItem onClick={handleClose}>Mens Top wear</MenuItem>
+              <MenuItem onClick={handleClose}>Mens Bottom wear</MenuItem>
+              <MenuItem onClick={handleClose}>Women Top</MenuItem>
+              <MenuItem onClick={handleClose}>Jeans</MenuItem>
+              <MenuItem onClick={handleClose}>Kurtis</MenuItem>
+            </Menu>
+          )}
         </Container>
       ))}
     </Component>

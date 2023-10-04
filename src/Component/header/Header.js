@@ -43,7 +43,7 @@ const MenuButton = styled(IconButton)(({ theme }) => ({
   },
 }));
 
-const Header = () => {
+const HeaderSeller = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -72,10 +72,11 @@ const Header = () => {
         <Drawer open={open} onClose={handleClose}>
           {list}
         </Drawer>
-        <Component >
+        <Component>
           <img src="/flipkart.png" alt="Flipkart Logo" width="88px" />
-          <Box style={{ display: "flex" }}>
+          <Box style={{ display: "flex", justifyContent: "center" , alignItems: "center"}}>
             <SubHeading>Explore Plus</SubHeading>
+            <img src="/plus.svg" className="ml-2" />
           </Box>
         </Component>
         <Search />
@@ -87,4 +88,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderSeller;

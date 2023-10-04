@@ -35,6 +35,8 @@ const Discount = styled(Typography)`
 const Remove = styled(Button)`
   margin-top: 20px;
   font-size: 16px;
+  color: black;
+  font-weight: 600;
 `;
 
 const CartItem = ({ item, removeItemFromCart }) => {
@@ -65,6 +67,7 @@ const CartItem = ({ item, removeItemFromCart }) => {
           &nbsp;&nbsp;&nbsp;
           <Discount component="span">{item.discountPercentage} off</Discount>
         </Typography>
+        <Remove>SAVE FOR LATER</Remove>
         <Remove onClick={() => removeItemFromCart(item.id)}>Remove</Remove>
       </Box>
     </Component>

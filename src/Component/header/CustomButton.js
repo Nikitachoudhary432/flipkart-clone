@@ -92,7 +92,9 @@ const CustomButton = () => {
         <MenuItem onClick={handleClose}>reward</MenuItem>
         <MenuItem onClick={handleClose}>Gift card</MenuItem>
       </Menu>
-      <Typography className="font-bold">Become a Seller</Typography>
+      <Link to="/seller">
+        <Typography className="font-bold">Become a Seller</Typography>
+      </Link>
       <Typography
         aria-controls="simple-menu"
         aria-haspopup="true"
@@ -105,11 +107,20 @@ const CustomButton = () => {
         open={Boolean(menu)}
         onClose={handleClose}
         onMouseLeave={handleClose}
+        className="m-0 p-0"
       >
-        <MenuItem onClick={handleClose}>Notification Preferences</MenuItem>
-        <MenuItem onClick={handleClose}>24 X 7 Customer Care</MenuItem>
-        <MenuItem onClick={handleClose}>Advertise</MenuItem>
-        <MenuItem onClick={handleClose}>Download App</MenuItem>
+        <Link to="/notification">
+          <MenuItem onClick={handleClose}>Notification Preferences</MenuItem>
+        </Link>
+        <Link to="/customer">
+          <MenuItem onClick={handleClose}>24 X 7 Customer Care</MenuItem>
+        </Link>
+        <Link to="/advertise">
+          <MenuItem onClick={handleClose}>Advertise</MenuItem>
+        </Link>
+        <Link to="/download">
+          <MenuItem onClick={handleClose}>Download App</MenuItem>
+        </Link>
       </Menu>
 
       <Container to="/cart">

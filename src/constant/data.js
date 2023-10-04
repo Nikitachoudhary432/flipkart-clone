@@ -173,3 +173,33 @@ export const furnitureData = [
     tagline: "Furn Central & more",
   },
 ];
+
+export const notification = [
+  {
+    text: "Electronics",
+  },
+  {
+    text: "TV's & Appliances",
+  },
+  {
+    text: "Men",
+  },
+  {
+    text: "Women",
+  },
+  {
+    text: "Baby & Kids",
+  },
+  {
+    text: "Home & Furniture",
+  },
+  {
+    text: "Sports, Boxs & more",
+  },
+  {
+    text: "Flights",
+  },
+  {
+    text: "Offer Zone",
+  },
+];

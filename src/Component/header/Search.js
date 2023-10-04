@@ -7,13 +7,21 @@ import { useSelector, useDispatch } from "react-redux"; // hooks
 import { searchProduct } from "../Action";
 import { Link } from "react-router-dom";
 
-const SearchContainer = styled(Box)`
-  border-radius: 2px;
-  margin-left: 10px;
-  width: 38%;
-  background-color: #fff;
-  display: flex;
-`;
+const SearchContainer = styled(Box)(({ theme }) => ({
+  borderRadius: "2px",
+  marginLeft: "10px",
+  width: "38%",
+  backgroundColor: "#fff",
+  display: "flex",
+  [theme.breakpoints.down("sm")]: {
+    width: "45%",
+    marginLeft: "20px",
+  },
+  [theme.breakpoints.down("md")]: {
+    width: "45%",
+    marginLeft: "20px",
+  },
+}));
 
 const SearchIconWrapper = styled(Box)`
   margin-left: auto;
